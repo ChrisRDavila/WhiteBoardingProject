@@ -10,3 +10,15 @@ Output: "Jasmine%20Ann%20Jones"
 
 Solution 1: Without recursion
 
+const StringToUrlOne = function(input) {
+  wordArray = input.split(' ');
+  urlArray = [];
+  for(let i=0; i < wordArray.length; i++){
+    let words = wordArray[i].concat('%20');
+    urlArray.push(words);
+  }
+  let joinedArray = urlArray.join('');
+  return joinedArray;
+
+}
+
