@@ -20,3 +20,12 @@ count++;
 } let fixOutput = output.replaceAll('1','')
   return fixOutput;
 }
+
+psuedoCode/ explanation :
+create var for output string and count;
+loop thru input increment count by all characters in string
+if value of input at index [i] on loop is different then the index after
+replace that index with the count up to that point and the character at that index and 
+reset count to 0
+to match output required, replaceAll was used to remove indices that have a count of 1, 
+and replace with just the value of the index ie ('a') instead of ('1a)

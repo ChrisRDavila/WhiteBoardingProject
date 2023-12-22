@@ -9,3 +9,20 @@ Output: false
 Input: "copyright"
 
 Output: true
+
+function unique(string){
+  for(let i = 0; i < string.length; i++){
+    for(let j = i + 1; j < string.length; j++){
+      if(string[i] === string[j]){
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+psuedo code/explanation
+create a loop inside a loop that will loop checks the subsequent value of the of the idices against
+current value of indices to see if the values match, 
+if there is a index with a value that matches another value in the string then 
+function will return false other wise returns true
