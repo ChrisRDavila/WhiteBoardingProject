@@ -5,3 +5,18 @@ Example
 Input: "aaabccdddda"
 
 Output: "3ab2c4da"
+
+w/out recursion
+
+function stringCompression (str) {
+  let output = '';
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+count++;
+    if (str[i] != str[i+1]) {
+      output +=  count + str[i];
+      count = 0;
+    }
+} let fixOutput = output.replaceAll('1','')
+  return fixOutput;
+}

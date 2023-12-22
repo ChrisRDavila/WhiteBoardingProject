@@ -17,8 +17,48 @@ const StringToUrlOne = function(input) {
     let words = wordArray[i].concat('%20');
     urlArray.push(words);
   }
-  let joinedArray = urlArray.join('');
-  return joinedArray;
+  let joinedString = urlArray.join('');
+  return joinedString;
 
 }
+
+psuedo/explained: create an array of words in string split at the spaces
+create an empty array that will be populated with new words that replace spaces with '%20'
+loop thru split words array and create variable for each word that concatinates '%20' on to end of the word
+push concatinated words onto empty url Array
+create a final string that joins the newly created words from url Array and return that value
+
+recursive 
+ 
+ let stringToUrlTwo = (inputString) => {
+  if(!inputString.includes(' ') ) {
+    return inputString;
+  } else if (inputStrung.includes(' ')) {
+    inputString(' ')
+  }
+  } else {
+    return stringToUrlTwo
+  }
+
+ const recurseReverse = (string) => {
+  if (string === "") {
+    return "";
+  } else {
+    return recurseReverse(string.substring(1)) + string[0];
+  }
+}
+
+
+ 
+
+const incrementCounter = (counter) => {
+  if (counter >= 3) {
+    return counter;
+  } else {
+    console.log(counter);
+    return incrementCounter(counter + 1);
+  }
+}
+
+incrementCounter(0);
 
