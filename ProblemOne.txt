@@ -28,37 +28,35 @@ loop thru split words array and create variable for each word that concatinates 
 push concatinated words onto empty url Array
 create a final string that joins the newly created words from url Array and return that value
 
-recursive 
+recursive 1
  
- let stringToUrlTwo = (inputString) => {
-  if(!inputString.includes(' ') ) {
-    return inputString;
-  } else if (inputStrung.includes(' ')) {
-    inputString(' ')
-  }
-  } else {
-    return stringToUrlTwo
+ function stringToUrlTwo(str) { 
+    if (str.length === 0) { 
+        return ''; 
+    } 
+    if (str[0] === ' ') { 
+        return '%20' + stringToUrlTwo(str.slice(1)); 
+    } 
+    return str[0] + stringToUrlTwo(str.slice(1)); 
+} 
+  
+let inputStr = "Jasmine Ann Jones"
+let outputStr = stringToUrlTwo(inputStr); 
+
+
+function replaceSpacesRecursive(input, index = 0) {
+  if (index === input.length) {
+    return '';
   }
 
- const recurseReverse = (string) => {
-  if (string === "") {
-    return "";
+  if (input[index] === ' ') {
+    return '%20' + replaceSpacesRecursive(input, index + 1);
   } else {
-    return recurseReverse(string.substring(1)) + string[0];
+    return input[index] + replaceSpacesRecursive(input, index + 1);
   }
 }
 
 
- 
 
-const incrementCounter = (counter) => {
-  if (counter >= 3) {
-    return counter;
-  } else {
-    console.log(counter);
-    return incrementCounter(counter + 1);
-  }
-}
-
-incrementCounter(0);
-
+set up a function with parameter that takes input and index with index set to 0.  set up a termination case for if index is equal to input.length to break recursion loop.  create a branch of logic that will return the replacement characters if the element at index is a ' ' and call the function itslef recursievley with index + 1 to increment along index,  
+another logic branch for remaining logic that will return the rest of the characters as they are input and increment along index

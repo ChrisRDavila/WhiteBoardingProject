@@ -33,3 +33,48 @@ function removeDuplicates(inputArray) {
 removeDuplicates(inputArray);
 
 using recursion
+
+function removeDuplicatesRec(input, index = 0, result = []) {
+  if (input.length === index) {
+    return result;
+  }
+  if (result.indexOf(input[i] === -1))
+}
+
+
+
+
+
+function replaceSpacesRecursive(input, index = 0) {
+  if (index === input.length) {
+    return '';
+  }
+
+  if (input[index] === ' ') {
+    return '%20' + replaceSpacesRecursive(input, index + 1);
+  } else {
+    return input[index] + replaceSpacesRecursive(input, index + 1);
+  }
+}
+
+function removeDuplicates(input) {
+  let unique = [];
+  input.forEach(element => {
+    if(!unique.includes(element)) {
+      unique.push(element)
+    }
+  })
+  return unique;
+}
+
+function removeDuplicates(input, index = 0) {
+  if (index === input.length) {
+    return input;
+  }
+  let unique = [];
+  if (!unique.includes(input[index])) {
+    return unique.push(input[index]) + removeDuplicates(input, index + 1);
+  } else {
+    return input[index] + removeDuplicates(input, index + 1);
+  }
+}
